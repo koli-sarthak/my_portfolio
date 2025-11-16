@@ -72,7 +72,7 @@ function initNavigation() {
         
         navLinks.forEach(link => {
             link.classList.remove('active');
-            if (link.getAttribute('href') === #${current}) {
+            if (link.getAttribute('href') === `#${current}`) {
                 link.classList.add('active');
             }
         });
@@ -246,7 +246,7 @@ function showNotification(message, type) {
     
     // Create notification element
     const notification = document.createElement('div');
-    notification.className = notification ${type === 'error' ? 'error' : ''};
+    notification.className = `notification ${type === 'error' ? 'error' : ''}`;
     notification.innerHTML = `
         <div class="notification-content">
             <span class="notification-message">${message}</span>
@@ -308,14 +308,14 @@ function initParallaxEffect() {
         const rate = scrolled * -0.5;
         
         if (hero) {
-            hero.style.transform = translateY(${rate}px);
+            hero.style.transform = `translateY(${rate}px)`;
         }
         
         // Parallax for floating elements
         floatingElements.forEach((element, index) => {
             const speed = 0.3 + (index * 0.1);
             const yPos = -(scrolled * speed);
-            element.style.transform = translateY(${yPos}px) translateX(var(--tx, 0));
+            element.style.transform = `translateY(${yPos}px) translateX(var(--tx, 0))`;
         });
     });
 }
@@ -378,7 +378,7 @@ function initFloatingIcons() {
     floatingElements.forEach(element => {
         // Add random slight movement to make it more dynamic
         const randomX = (Math.random() - 0.5) * 10;
-        element.style.setProperty('--tx', ${randomX}px);
+        element.style.setProperty('--tx', `${randomX}px`);
         
         // Add click effect
         element.addEventListener('click', () => {
